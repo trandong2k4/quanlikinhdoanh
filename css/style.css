@@ -1,0 +1,527 @@
+/* ----- CÀI ĐẶT BIẾN MÀU SẮC VÀ FONT CHỮ CHUNG ----- */
+:root {
+    --sidebar-bg: #1e293b;       /* Màu nền sidebar */
+    --main-bg: #f1f5f9;          /* Màu nền khu vực chính */
+    --card-bg: #ffffff;          /* Màu nền các thẻ card */
+    --primary-text: #0f172a;      /* Màu chữ chính */
+    --secondary-text: #64748b;   /* Màu chữ phụ */
+    --sidebar-text: #cbd5e1;     /* Màu chữ trên sidebar */
+    --accent-color: #3b82f6;     /* Màu nhấn (link active, icon...) */
+    --border-color: #e2e8f0;     /* Màu đường viền */
+}
+
+/* ----- RESET CSS CƠ BẢN ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--main-bg);
+    color: var(--primary-text);
+}
+
+/* ----- BỐ CỤC CHÍNH ----- */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== PHONG CÁCH CHO SIDEBAR (MENU BÊN TRÁI) ===== */
+.sidebar {
+    flex: 0 0 260px; /* Không co giãn, chiều rộng cố định 260px */
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.sidebar-nav ul {
+    list-style-type: none;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--sidebar-text);
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.sub-menu {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.sub-menu a {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.sub-menu a:hover,
+.sub-menu a.active {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Đẩy footer xuống cuối */
+    border-top: 1px solid #334155;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.logout-btn {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.logout-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+
+/* ===== PHONG CÁCH CHO MAIN CONTENT (KHU VỰC CHÍNH) ===== */
+.main-content {
+    flex-grow: 1; /* Chiếm hết không gian còn lại */
+    padding: 30px;
+}
+
+.main-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Báo cáo nhanh */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.stat-card h4 {
+    color: var(--secondary-text);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.card-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+}
+
+/* Biểu đồ và widget */
+.main-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.chart-container {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.chart-container h3 {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chart-container img {
+    width:1200px;
+    height: 500px;
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: auto;
+}
+
+.bottom-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.widget {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.widget h3 {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.widget ul li:last-child {
+    border-bottom: none;
+}
+.widget ul li span {
+    font-weight: 600;
+    color: var(--secondary-text);
+}
+
+/* ----- BỔ SUNG CSS CHO TRANG QUẢN LÝ NHÂN VIÊN ----- */
+
+/* Wrapper cho nội dung chính */
+.content-wrapper {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Thanh công cụ (Thêm mới, tìm kiếm, lọc) */
+.table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.search-filter input, .search-filter select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn:hover { opacity: 0.9; }
+.btn-primary { background-color: var(--accent-color); color: #fff; }
+.btn-secondary { background-color: #e4e6eb; color: var(--text-dark); }
+
+/* Bảng dữ liệu */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--secondary-text);
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.status-active { background-color: #28a745; }
+.status-inactive { background-color: #6c757d; }
+
+.action-buttons button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 0 5px;
+}
+.action-buttons .btn-edit { color: #007bff; }
+.action-buttons .btn-delete { color: #dc3545; }
+
+
+/* ----- CSS CHO MODAL (POPUP) ----- */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+.close-btn:hover { color: #000; }
+
+#modal-title { margin-bottom: 20px; }
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.form-actions {
+    margin-top: 20px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+/* ----- BỔ SUNG CSS CHO TRANG PHIẾU NHẬP ----- */
+
+/* Căn phải và đổi màu cho cột tổng tiền nhập */
+td.amount-in {
+    text-align: right;
+    font-weight: 600;
+    color: #1e8743; /* Màu xanh lá cho tiền nhập */
+}
+
+/* Các trạng thái mới của phiếu nhập */
+.status-completed { background-color: #007bff; } /* Màu xanh dương */
+/* status-pending (vàng) và status-cancelled (xám) đã có từ phiếu chi, có thể tái sử dụng */
+
+/* ----- BỔ SUNG CSS CHO TRANG QL ĐƠN HÀNG VÀ SẢN PHẨM ----- */
+
+/* Lọc theo khoảng thời gian */
+.date-range-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.date-range-filter label {
+    font-weight: 500;
+}
+
+/* Định dạng cột tiền tệ */
+td.cost { color: #dc3545; } /* Giá vốn màu đỏ */
+td.profit { color: #28a745; font-weight: 600; } /* Lợi nhuận màu xanh lá */
+
+/* Các trạng thái thanh toán */
+.status-paid { background-color: #28a745; } /* Đã thanh toán - Xanh lá */
+.status-unpaid { background-color: #ffc107; color: var(--primary-text); } /* Chưa TT - Vàng */
+.status-refunded { background-color: #6c757d; } /* Đã hoàn tiền - Xám */
+
+
+/* ----- BỔ SUNG CSS CHO TRANG QUẢN LÝ KHUYẾN MÃI ----- */
+
+/* Các trạng thái khuyến mãi */
+.status-active { background-color: #28a745; } /* Đang diễn ra - Xanh lá */
+.status-scheduled { background-color: #17a2b8; } /* Sắp diễn ra - Xanh lam */
+.status-expired { background-color: #6c757d; } /* Đã kết thúc - Xám */
+
+/* Nút tắt/dừng khuyến mãi */
+.action-buttons .btn-delete i.fa-power-off {
+    color: #ffc107; /* Màu vàng cảnh báo */
+}
+
+/* Tăng chiều rộng cho popup để chứa được nhiều thông tin hơn */
+.modal-content.modal-lg {
+    max-width: 800px;
+}
+
+/* Bố cục form theo hàng */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Thêm vào cuối file style.css để tương thích với input datetime-local */
+input[type="datetime-local"] {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem; /* Đảm bảo kích thước chữ phù hợp */
+    background-color: white;
+}
+
+
+
+/* ----- BỔ SUNG CSS CHO TRANG CÀI ĐẶT ----- */
+
+/* Trang Thông tin quán */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+.form-group.full-width {
+    grid-column: 1 / -1; /* Chiếm toàn bộ chiều rộng grid */
+}
+.logo-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#logo-preview {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+/* Trang Phân quyền */
+#role-modal hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+}
+#role-modal h4 {
+    margin-bottom: 15px;
+}
+.permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+.permission-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+.permission-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}

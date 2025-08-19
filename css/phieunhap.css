@@ -1,0 +1,12 @@
+/* ----- BỔ SUNG CSS CHO TRANG PHIẾU NHẬP ----- */
+
+/* Căn phải và đổi màu cho cột tổng tiền nhập */
+td.amount-in {
+    text-align: right;
+    font-weight: 600;
+    color: #1e8743; /* Màu xanh lá cho tiền nhập */
+}
+
+/* Các trạng thái mới của phiếu nhập */
+.status-completed { background-color: #007bff; } /* Màu xanh dương */
+/* status-pending (vàng) và status-cancelled (xám) đã có từ phiếu chi, có thể tái sử dụng */
