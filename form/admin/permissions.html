@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Phân quyền</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header"><h3><i class="fa-solid fa-mug-saucer"></i> THE HOUSE COFFEE</h3></div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a></li>
+                    <li><a href="#"><i class="fa-solid fa-box-open"></i> Quản lý</a></li>
+                    <li><a href="khuyen-mai.html"><i class="fa-solid fa-tags"></i> Khuyến mãi</a></li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                        <ul class="sub-menu">
+                            <li><a href="shop-info.html">- Thông tin quán</a></li>
+                            <!-- ĐÁNH DẤU ACTIVE CHO MỤC PHÂN QUYỀN -->
+                            <li><a href="permissions.html" class="active">- Phân quyền</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile"><i class="fa-solid fa-user-circle"></i><span>Admin</span></div>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <header class="main-header"><h2>Phân quyền Người dùng</h2></header>
+            
+            <div class="content-wrapper">
+                <div class="table-toolbar">
+                    <button id="add-role-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm vai trò mới</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tên vai trò</th>
+                                <th>Mô tả</th>
+                                <th>Số người dùng</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Admin</td>
+                                <td>Toàn quyền quản trị hệ thống</td>
+                                <td>1</td>
+                                <td class="action-buttons"><button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Quản lý cửa hàng</td>
+                                <td>Quản lý hoạt động, nhân viên, kho hàng tại cửa hàng</td>
+                                <td>2</td>
+                                <td class="action-buttons"><button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button><button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Thu ngân</td>
+                                <td>Chỉ có quyền thực hiện bán hàng và thanh toán</td>
+                                <td>5</td>
+                                <td class="action-buttons"><button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button><button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== MODAL/POPUP ĐỂ THÊM/SỬA VAI TRÒ ===== -->
+    <div id="role-modal" class="modal">
+        <div class="modal-content modal-lg">
+            <span class="close-btn">×</span>
+            <h3 id="modal-title">Thêm vai trò mới</h3>
+            <form id="role-form">
+                <div class="form-group">
+                    <label for="role-name">Tên vai trò:</label>
+                    <input type="text" id="role-name" placeholder="VD: Kế toán" required>
+                </div>
+                <div class="form-group">
+                    <label for="role-description">Mô tả:</label>
+                    <textarea id="role-description" rows="2" placeholder="Mô tả ngắn về vai trò..."></textarea>
+                </div>
+                <hr>
+                <h4>Danh sách quyền:</h4>
+                <div class="permissions-grid">
+                    <!-- Quyền Bán hàng -->
+                    <div class="permission-item"><input type="checkbox" id="p1"><label for="p1">Thực hiện bán hàng (POS)</label></div>
+                    <!-- Quyền Báo cáo -->
+                    <div class="permission-item"><input type="checkbox" id="p2"><label for="p2">Xem báo cáo doanh thu</label></div>
+                    <!-- Quyền Quản lý Menu -->
+                    <div class="permission-item"><input type="checkbox" id="p3"><label for="p3">Thêm/Sửa/Xóa Sản phẩm</label></div>
+                    <!-- Quyền Quản lý Kho -->
+                    <div class="permission-item"><input type="checkbox" id="p4"><label for="p4">Tạo Phiếu Nhập/Chi</label></div>
+                    <div class="permission-item"><input type="checkbox" id="p5"><label for="p5">Duyệt Phiếu Nhập/Chi</label></div>
+                    <!-- Quyền Quản lý Nhân viên -->
+                    <div class="permission-item"><input type="checkbox" id="p6"><label for="p6">Quản lý nhân viên</label></div>
+                    <!-- Quyền Khuyến mãi -->
+                    <div class="permission-item"><input type="checkbox" id="p7"><label for="p7">Quản lý khuyến mãi</label></div>
+                    <!-- Quyền Cài đặt -->
+                    <div class="permission-item"><input type="checkbox" id="p8"><label for="p8">Cài đặt thông tin quán</label></div>
+                    <div class="permission-item"><input type="checkbox" id="p9"><label for="p9">Quản lý phân quyền</label></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-role-btn">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu vai trò</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/js/admin-settings.js"></script>
+</body>
+</html>
