@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Sản phẩm (Menu)</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+             <div class="sidebar-header"><h3><i class="fa-solid fa-mug-saucer"></i> THE HOUSE COFFEE</h3></div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a></li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-box-open"></i> Quản lý</a>
+                        <ul class="sub-menu">
+                            <li><a href="don-hang.html">- Đơn hàng</a></li>
+                            <!-- ĐÁNH DẤU ACTIVE CHO MỤC SẢN PHẨM -->
+                            <li><a href="san-pham.html" class="active">- Sản phẩm (Menu)</a></li>
+                            <li><a href="#">- Kho hàng</a></li>
+                            <li><a href="employee.html">- Nhân viên</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa-solid fa-tags"></i> Khuyến mãi</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile"><i class="fa-solid fa-user-circle"></i><span>Quản lý A</span></div>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <header class="main-header"><h2>Quản lý Sản phẩm (Menu)</h2></header>
+            
+            <div class="content-wrapper">
+                <div class="table-toolbar">
+                    <button id="add-product-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</button>
+                    <div class="search-filter">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                        <select>
+                            <option value="">Tất cả danh mục</option>
+                            <option value="coffee">Cà phê</option>
+                            <option value="tea">Trà & Trà sữa</option>
+                            <option value="cake">Bánh ngọt</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã SP</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Danh Mục</th>
+                                <th>Giá Vốn</th>
+                                <th>Giá Bán</th>
+                                <th>Trạng Thái</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CF001</td>
+                                <td>Cà Phê Sữa</td>
+                                <td>Cà phê</td>
+                                <td class="cost">12.000đ</td>
+                                <td>30.000đ</td>
+                                <td><span class="status-badge status-active">Đang bán</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TS002</td>
+                                <td>Trà Sữa Trân Châu</td>
+                                <td>Trà & Trà sữa</td>
+                                <td class="cost">18.000đ</td>
+                                <td>45.000đ</td>
+                                <td><span class="status-badge status-active">Đang bán</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BN005</td>
+                                <td>Bánh Tiramisu</td>
+                                <td>Bánh ngọt</td>
+                                <td class="cost">15.000đ</td>
+                                <td>35.000đ</td>
+                                <td><span class="status-badge status-inactive">Ngừng bán</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL ĐỂ THÊM/SỬA SẢN PHẨM -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3 id="modal-title">Thêm sản phẩm mới</h3>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">Tên sản phẩm:</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Danh mục:</label>
+                    <select id="product-category" required>
+                        <option value="coffee">Cà phê</option>
+                        <option value="tea">Trà & Trà sữa</option>
+                        <option value="cake">Bánh ngọt</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-cost">Giá vốn:</label>
+                    <input type="number" id="product-cost" placeholder="VD: 12000" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Giá bán:</label>
+                    <input type="number" id="product-price" placeholder="VD: 30000" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-status">Trạng thái:</label>
+                    <select id="product-status" required>
+                        <option value="active">Đang bán</option>
+                        <option value="inactive">Ngừng bán</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-product-btn">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Phiếu Chi</title>
+    <!-- Kế thừa CSS chung của Dashboard -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Link đến thư viện icon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR (GIỮ NGUYÊN NHƯNG ĐỔI ACTIVE) ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-mug-saucer"></i> THE HOUSE COFFEE</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a></li>
+                    <li>
+                        <!-- Đánh dấu active cho mục Quản lý -->
+                        <a href="#" class="active"><i class="fa-solid fa-box-open"></i> Quản lý</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">- Đơn hàng</a></li>
+                            <li><a href="#">- Sản phẩm (Menu)</a></li>
+                            <!-- Đánh dấu active cho mục Kho hàng -->
+                            <li><a href="#" class="active">- Kho hàng</a></li>
+                            <li><a href="employee.html">- Nhân viên</a></li>
+                            <li><a href="#">- Khách hàng</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa-solid fa-tags"></i> Khuyến mãi</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile"><i class="fa-solid fa-user-circle"></i><span>Quản lý A</span></div>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT (PHẦN NỘI DUNG THAY ĐỔI) ===== -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Quản lý Kho hàng - Phiếu Chi</h2>
+            </header>
+            
+            <div class="content-wrapper">
+                <div class="table-toolbar">
+                    <button id="add-voucher-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tạo Phiếu Chi</button>
+                    <div class="search-filter">
+                        <input type="text" placeholder="Tìm theo Mã phiếu/Người nhận...">
+                        <select>
+                            <option value="">Lọc theo Loại chi</option>
+                            <option value="import">Nhập nguyên liệu</option>
+                            <option value="rent">Chi phí mặt bằng</option>
+                            <option value="salary">Lương nhân viên</option>
+                            <option value="other">Chi phí khác</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã Phiếu</th>
+                                <th>Ngày Tạo</th>
+                                <th>Loại Chi</th>
+                                <th>Số Tiền</th>
+                                <th>Người Nhận</th>
+                                <th>Người Tạo</th>
+                                <th>Trạng Thái</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PC00125</td>
+                                <td>20/10/2023</td>
+                                <td>Nhập nguyên liệu</td>
+                                <td class="amount">1.550.000đ</td>
+                                <td>NCC Cà phê Đà Lạt</td>
+                                <td>Quản lý A</td>
+                                <td><span class="status-badge status-approved">Đã duyệt</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-print" title="In phiếu"><i class="fa-solid fa-print"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PC00124</td>
+                                <td>19/10/2023</td>
+                                <td>Chi phí mặt bằng</td>
+                                <td class="amount">15.000.000đ</td>
+                                <td>Bà Trần Thu H</td>
+                                <td>Quản lý A</td>
+                                <td><span class="status-badge status-approved">Đã duyệt</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-print" title="In phiếu"><i class="fa-solid fa-print"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>PC00126</td>
+                                <td>21/10/2023</td>
+                                <td>Chi phí khác</td>
+                                <td class="amount">780.000đ</td>
+                                <td>Sửa chữa máy lạnh</td>
+                                <td>Thu ngân B</td>
+                                <td><span class="status-badge status-pending">Chờ duyệt</span></td>
+                                <td class="action-buttons">
+                                     <button class="btn-edit" title="Sửa"><i class="fa-solid fa-pen-to-square"></i></button>
+                                     <button class="btn-delete" title="Xóa"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== MODAL/POPUP ĐỂ TẠO PHIẾU CHI (ẨN MẶC ĐỊNH) ===== -->
+    <div id="voucher-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3 id="modal-title">Tạo Phiếu Chi Mới</h3>
+            <form id="voucher-form">
+                <div class="form-group">
+                    <label for="voucher-type">Loại chi:</label>
+                    <select id="voucher-type" name="voucher-type" required>
+                        <option value="">-- Chọn loại chi --</option>
+                        <option value="import">Nhập nguyên liệu</option>
+                        <option value="rent">Chi phí mặt bằng</option>
+                        <option value="salary">Lương nhân viên</option>
+                        <option value="other">Chi phí khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="recipient">Người nhận tiền:</label>
+                    <input type="text" id="recipient" name="recipient" required placeholder="VD: Nhà cung cấp ABC, Ông Nguyễn Văn A...">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Số tiền (VNĐ):</label>
+                    <input type="number" id="amount" name="amount" required placeholder="Chỉ nhập số, VD: 1500000">
+                </div>
+                <div class="form-group">
+                    <label for="notes">Nội dung chi:</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Ghi chú chi tiết về khoản chi..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-voucher-btn">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu và Gửi duyệt</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Bạn có thể tạo file JS mới hoặc dùng chung script.js và thêm logic vào -->
+    <script src="/js/phieuchi.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Nhân viên</title>
+    <!-- Kế thừa CSS chung của Dashboard -->
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="stylesheet" href="/css/employee.css">
+    <!-- Link đến thư viện icon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR (GIỮ NGUYÊN NHƯNG ĐỔI ACTIVE) ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-mug-saucer"></i> THE HOUSE COFFEE</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a>
+                    </li>
+                    <li>
+                        <!-- Đánh dấu active cho mục Quản lý -->
+                        <a href="#" class="active"><i class="fa-solid fa-box-open"></i> Quản lý</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"> Đơn hàng</a></li>
+                            <li><a href="#"> Sản phẩm (Menu)</a></li>
+                            <li><a href="#"> Kho hàng</a></li>
+                             <!-- Đánh dấu active cho mục Nhân viên -->
+                            <li><a href="employee.html" class="active"> Nhân viên</a></li>
+                            <li><a href="#"> Khách hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-tags"></i> Khuyến mãi</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>Quản lý A</span>
+                </div>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT (PHẦN NỘI DUNG THAY ĐỔI) ===== -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Quản lý Nhân viên</h2>
+            </header>
+            
+            <div class="content-wrapper">
+                <div class="table-toolbar">
+                    <button id="add-employee-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm mới</button>
+                    <div class="search-filter">
+                        <input type="text" placeholder="Tìm kiếm nhân viên...">
+                        <select>
+                            <option value="">Lọc theo chức vụ</option>
+                            <option value="manager">Quản lý</option>
+                            <option value="cashier">Thu ngân</option>
+                            <option value="barista">Pha chế</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ảnh đại diện</th>
+                                <th>Tên nhân viên</th>
+                                <th>Chức vụ</th>
+                                <th>Trạng thái</th>
+                                <th>Số điện thoại</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NV001</td>
+                                <td><img src="https://placehold.co/40x40/EFEFEF/AAAAAA&text=A" alt="avatar" class="avatar"></td>
+                                <td>Nguyễn Văn A</td>
+                                <td>Quản lý</td>
+                                <td><span class="status-badge status-active">Đang làm</span></td>
+                                <td>0987 654 321</td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>NV002</td>
+                                <td><img src="https://placehold.co/40x40/EFEFEF/AAAAAA&text=B" alt="avatar" class="avatar"></td>
+                                <td>Trần Thị B</td>
+                                <td>Thu ngân</td>
+                                <td><span class="status-badge status-active">Đang làm</span></td>
+                                <td>0123 456 789</td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>NV003</td>
+                                <td><img src="https://placehold.co/40x40/EFEFEF/AAAAAA&text=C" alt="avatar" class="avatar"></td>
+                                <td>Lê Văn C</td>
+                                <td>Pha chế</td>
+                                <td><span class="status-badge status-inactive">Đã nghỉ</span></td>
+                                <td>0912 345 678</td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== MODAL/POPUP ĐỂ THÊM/SỬA NHÂN VIÊN (ẨN MẶC ĐỊNH) ===== -->
+    <div id="employee-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3 id="modal-title">Thêm nhân viên mới</h3>
+            <form id="employee-form">
+                <input type="hidden" id="employee-id">
+                <div class="form-group">
+                    <label for="name">Tên nhân viên:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Chức vụ:</label>
+                    <select id="role" name="role" required>
+                        <option value="manager">Quản lý</option>
+                        <option value="cashier">Thu ngân</option>
+                        <option value="barista">Pha chế</option>
+                        <option value="waiter">Phục vụ</option>
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                 <div class="form-group">
+                    <label for="status">Trạng thái:</label>
+                    <select id="status" name="status" required>
+                        <option value="active">Đang làm</option>
+                        <option value="inactive">Đã nghỉ</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-btn">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Script để xử lý popup -->
+    <script src="/js/employee.js"></script>
+
+</body>
+</html>

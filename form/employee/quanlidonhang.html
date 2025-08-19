@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Đơn hàng</title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header"><h3><i class="fa-solid fa-mug-saucer"></i> THE HOUSE COFFEE</h3></div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a></li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-box-open"></i> Quản lý</a>
+                        <ul class="sub-menu">
+                            <!-- ĐÁNH DẤU ACTIVE CHO MỤC ĐƠN HÀNG -->
+                            <li><a href="don-hang.html" class="active">- Đơn hàng</a></li>
+                            <li><a href="san-pham.html">- Sản phẩm (Menu)</a></li>
+                            <li><a href="#">- Kho hàng</a></li>
+                            <li><a href="employee.html">- Nhân viên</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa-solid fa-tags"></i> Khuyến mãi</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile"><i class="fa-solid fa-user-circle"></i><span>Kế toán A</span></div>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <header class="main-header"><h2>Quản lý Đơn hàng</h2></header>
+            
+            <div class="content-wrapper">
+                <div class="table-toolbar">
+                    <div class="date-range-filter">
+                        <label>Từ ngày:</label><input type="date">
+                        <label>Đến ngày:</label><input type="date">
+                        <button class="btn btn-secondary">Lọc</button>
+                    </div>
+                    <div class="search-filter">
+                        <input type="text" placeholder="Tìm Mã ĐH, SĐT khách...">
+                        <select>
+                            <option value="">Trạng thái thanh toán</option>
+                            <option value="paid">Đã thanh toán</option>
+                            <option value="unpaid">Chưa thanh toán</option>
+                            <option value="refunded">Đã hoàn tiền</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã ĐH</th>
+                                <th>Ngày tạo</th>
+                                <th>Tổng tiền</th>
+                                <th>Giá vốn</th>
+                                <th>Lợi nhuận</th>
+                                <th>Trạng thái TT</th>
+                                <th>Phương thức TT</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#10521</td>
+                                <td>15:30 22/10/23</td>
+                                <td>125.000đ</td>
+                                <td class="cost">55.000đ</td>
+                                <td class="profit">70.000đ</td>
+                                <td><span class="status-badge status-paid">Đã TT</span></td>
+                                <td>Tiền mặt</td>
+                                <td class="action-buttons">
+                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-print" title="In lại HĐ"><i class="fa-solid fa-print"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>#10520</td>
+                                <td>15:25 22/10/23</td>
+                                <td>75.000đ</td>
+                                <td class="cost">30.000đ</td>
+                                <td class="profit">45.000đ</td>
+                                <td><span class="status-badge status-paid">Đã TT</span></td>
+                                <td>Momo</td>
+                                <td class="action-buttons">
+                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn-print" title="In lại HĐ"><i class="fa-solid fa-print"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>#10518</td>
+                                <td>14:50 22/10/23</td>
+                                <td>90.000đ</td>
+                                <td class="cost">40.000đ</td>
+                                <td class="profit">50.000đ</td>
+                                <td><span class="status-badge status-refunded">Đã hoàn tiền</span></td>
+                                <td>Chuyển khoản</td>
+                                <td class="action-buttons">
+                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

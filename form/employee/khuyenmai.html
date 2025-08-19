@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Khuyến mãi</title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header"><h3><i class="fa-solid fa-mug-saucer"></i> TÊN QUÁN CAFE</h3></div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-box-open"></i> Quản lý</a>
+                        <ul class="sub-menu">
+                            <li><a href="don-hang.html">- Đơn hàng</a></li>
+                            <li><a href="san-pham.html">- Sản phẩm (Menu)</a></li>
+                            <li><a href="#">- Kho hàng</a></li>
+                            <li><a href="employee.html">- Nhân viên</a></li>
+                        </ul>
+                    </li>
+                    <!-- ĐÁNH DẤU ACTIVE CHO MỤC KHUYẾN MÃI -->
+                    <li><a href="khuyen-mai.html" class="active"><i class="fa-solid fa-tags"></i> Khuyến mãi</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile"><i class="fa-solid fa-user-circle"></i><span>Quản lý A</span></div>
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <header class="main-header"><h2>Quản lý Khuyến mãi</h2></header>
+            
+            <div class="content-wrapper">
+                <div class="table-toolbar">
+                    <button id="add-promo-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tạo Khuyến mãi mới</button>
+                    <div class="search-filter">
+                        <input type="text" placeholder="Tìm theo Tên/Mã KM...">
+                        <select>
+                            <option value="">Tất cả trạng thái</option>
+                            <option value="active">Đang diễn ra</option>
+                            <option value="scheduled">Sắp diễn ra</option>
+                            <option value="expired">Đã kết thúc</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã KM</th>
+                                <th>Tên Chương Trình</th>
+                                <th>Loại</th>
+                                <th>Thời gian áp dụng</th>
+                                <th>Số lượt sử dụng</th>
+                                <th>Trạng Thái</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GIAM20K</td>
+                                <td>Giảm 20.000đ cho đơn từ 100.000đ</td>
+                                <td>Giảm giá theo HĐ</td>
+                                <td>01/10 - 31/10/2023</td>
+                                <td>152</td>
+                                <td><span class="status-badge status-active">Đang diễn ra</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-power-off"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MUA1TANG1</td>
+                                <td>Mua 1 tặng 1 Cà Phê Đen</td>
+                                <td>Tặng sản phẩm</td>
+                                <td>15/10 - 25/10/2023</td>
+                                <td>89</td>
+                                <td><span class="status-badge status-active">Đang diễn ra</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-power-off"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>NOEL2023</td>
+                                <td>Giảm 15% tổng hóa đơn</td>
+                                <td>Giảm giá %</td>
+                                <td>20/12 - 25/12/2023</td>
+                                <td>0</td>
+                                <td><span class="status-badge status-scheduled">Sắp diễn ra</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HE2023</td>
+                                <td>Đồng giá 29k các món Trà</td>
+                                <td>Đồng giá</td>
+                                <td>01/06 - 31/08/2023</td>
+                                <td>1.250</td>
+                                <td><span class="status-badge status-expired">Đã kết thúc</span></td>
+                                <td class="action-buttons">
+                                    <button class="btn-view" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== MODAL/POPUP ĐỂ TẠO KHUYẾN MÃI ===== -->
+    <div id="promo-modal" class="modal">
+        <div class="modal-content modal-lg"> <!-- Thêm class modal-lg để popup rộng hơn -->
+            <span class="close-btn">×</span>
+            <h3 id="modal-title">Tạo Chương Trình Khuyến Mãi</h3>
+            <form id="promo-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="promo-name">Tên chương trình:</label>
+                        <input type="text" id="promo-name" placeholder="VD: Giảm giá cuối tuần" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="promo-code">Mã khuyến mãi (Tùy chọn):</label>
+                        <input type="text" id="promo-code" placeholder="VD: GIAM20K">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="promo-type">Loại khuyến mãi:</label>
+                    <select id="promo-type" required>
+                        <option value="percent">Giảm giá theo %</option>
+                        <option value="fixed">Giảm giá số tiền cố định</option>
+                        <option value="gift">Tặng sản phẩm</option>
+                        <option value="same_price">Đồng giá</option>
+                    </select>
+                </div>
+                
+                <!-- Các trường sẽ hiện ra tùy theo loại khuyến mãi được chọn -->
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="start-date">Ngày bắt đầu:</label>
+                        <input type="datetime-local" id="start-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">Ngày kết thúc (Để trống nếu không giới hạn):</label>
+                        <input type="datetime-local" id="end-date">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="promo-condition">Điều kiện áp dụng:</label>
+                    <input type="text" id="promo-condition" placeholder="VD: Áp dụng cho đơn hàng từ 100.000đ">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-promo-btn">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu Chương Trình</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/js/admin-script.js"></script>
+</body>
+</html>
