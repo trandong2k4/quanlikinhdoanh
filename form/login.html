@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - The House Coffee</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>THE HOUSE COFFEE</h1>
+            <!-- <p>Chào mừng trở lại!</p> -->
+
+            <!-- BẮT ĐẦU CẬP NHẬT TẠI ĐÂY -->
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <!-- Thêm id="username" -->
+                    <input type="text" id="username" placeholder="Tên tài khoản" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <!-- Thêm id="password" -->
+                    <input type="password" id="password" placeholder="Mật khẩu" required>
+                </div>
+                
+                <!-- Thẻ để hiển thị thông báo lỗi -->
+                <p id="error-message" class="error-message"></p>
+
+                <div class="options">
+                    <a href="#">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Đăng nhập</button>
+
+                <!-- <div class="alternative-login">
+                    <p>Hoặc đăng nhập với</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div> -->
+            </form>
+            <!-- KẾT THÚC CẬP NHẬT -->
+        </div>
+    </div>
+    
+    <!-- Liên kết đến file login.js ở cuối thẻ body -->
+    <script src="/js/login.js"></script>
+</body>
+</html>
