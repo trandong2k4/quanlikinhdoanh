@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Quản lý Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link đến thư viện icon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- ===== SIDEBAR (MENU ĐIỀU HƯỚNG) ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-mug-saucer"></i> THE HOUSE COFFEE</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Báo cáo</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">- Doanh thu</a></li>
+                            <li><a href="#">- Lợi nhuận</a></li>
+                            <li><a href="#">- Món bán chạy</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-box-open"></i> Quản lý</a>
+                        <ul class="sub-menu">
+                            <li><a href="/form/employee/quanlidonhang.html">- Đơn hàng</a></li>
+                            <li><a href="/form/employee/quanlisanpham.html">- Sản phẩm (Menu)</a></li>
+                            <li><a href="/form/employee/phieunhap.html">- Kho hàng</a></li>
+                            <li><a href="/form/employee/employee.html">- Nhân viên</a></li>
+                            <li><a href="#">- Khách hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-tags"></i> Khuyến mãi</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                        <ul class="sub-menu">
+                            <li><a href="/form/admin/shop-info.html">- Thông tin quán</a></li>
+                            <li><a href="/form/admin/permissions.html">- Phân quyền</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>Quản lý A</span>
+                </div>
+                <!-- Thêm id="logout-button" vào đây -->
+                <a href="../code/form/login.html" id="logout-button" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT (KHU VỰC NỘI DUNG CHÍNH) ===== -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Bảng điều khiển</h2>
+            </header>
+            
+            <!-- Báo cáo nhanh -->
+            <section class="quick-stats">
+                <div class="stat-card">
+                    <h4>Doanh thu hôm nay</h4>
+                    <p>15.500.000đ</p>
+                    <i class="fa-solid fa-dollar-sign card-icon"></i>
+                </div>
+                <div class="stat-card">
+                    <h4>Số đơn hàng</h4>
+                    <p>152</p>
+                    <i class="fa-solid fa-file-lines card-icon"></i>
+                </div>
+                <div class="stat-card">
+                    <h4>Lợi nhuận ước tính</h4>
+                    <p>6.200.000đ</p>
+                    <i class="fa-solid fa-arrow-trend-up card-icon"></i>
+                </div>
+            </section>
+
+            <!-- Biểu đồ và các thông tin khác -->
+            <section class="main-data">
+                <div class="chart-container">
+                    <h3><i class="fa-solid fa-chart-line"></i> BIỂU ĐỒ DOANH THU THEO TUẦN</h3>
+                    <img src="/img/bieudo.jpg" alt="Biểu đồ doanh thu" class="chart-placeholder">
+                </div>
+
+                <div class="bottom-widgets">
+                    <div class="widget">
+                        <h3><i class="fa-solid fa-trophy"></i> TOP MÓN BÁN CHẠY NHẤT</h3>
+                        <ul>
+                            <li>1. Cà Phê Sữa <span>(105 ly)</span></li>
+                            <li>2. Trà Đào Cam Sả <span>(88 ly)</span></li>
+                            <li>3. Bánh Tiramisu <span>(50 cái)</span></li>
+                            <li>4. Bạc Xỉu <span>(45 ly)</span></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h3><i class="fa-solid fa-bell"></i> HOẠT ĐỘNG GẦN ĐÂY</h3>
+                        <ul>
+                            <li>- Nhân viên A thanh toán Bàn 2</li>
+                            <li>- Nhân viên B tạo đơn mang về</li>
+                            <li>- Nhập kho 2kg hạt cà phê Arabica</li>
+                            <li>- Tạo khuyến mãi mới: "Giảm 20%"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/js/index.js"></script>
+
+</body>
+</html>
