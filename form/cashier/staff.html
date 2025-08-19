@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện bán hàng POS</title>
+    <link rel="stylesheet" href="/css/pos-style.css">
+    <!-- Link đến thư viện icon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="pos-container">
+        <!-- HEADER CHUNG -->
+        <header class="pos-header">
+            <h1><i class="fa-solid fa-cash-register"></i> THE HOUSE COFFEE</h1>
+            <div class="search-bar"><input type="text" placeholder="🔍 Tìm kiếm món..."></div>
+            <div class="header-info"><span>Nhân viên: Thu Ngân A</span><span>Ca làm: Sáng</span></div>
+        </header>
+
+        <!-- KHU VỰC CHÍNH VỚI 3 CỘT -->
+        <main class="pos-main">
+            
+            <!-- CỘT 1: DANH MỤC & TÌM KIẾM (KHÔNG ĐỔI) -->
+            <aside class="pos-sidebar">
+                <div class="category-list">
+                    <h2><i class="fa-solid fa-list"></i> Danh mục</h2>
+                    <ul>
+                        <li><a href="#" class="active">Tất cả</a></li>
+                        <li><a href="#">Cà phê</a></li>
+                        <li><a href="#">Trà & Trà sữa</a></li>
+                        <li><a href="#">Bánh ngọt</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-footer">
+                    <div class="user-profile"><i class="fa-solid fa-user-circle"></i><span>Thu Ngân A</span></div>
+                    <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </aside>
+
+            <!-- CỘT 2: DANH SÁCH MÓN ĂN (KHÔNG ĐỔI) -->
+            <section class="menu-grid">
+                <!-- Các menu-item giữ nguyên -->
+                <div class="menu-item" data-name="Cà Phê Sữa" data-price="30000"><div class="item-icon">☕</div><div class="item-name">Cà Phê Sữa</div><div class="item-price">30.000đ</div></div>
+                <div class="menu-item" data-name="Trà Sữa Trân Châu" data-price="45000"><div class="item-icon">🧋</div><div class="item-name">Trà Sữa Trân Châu</div><div class="item-price">45.000đ</div></div>
+                <div class="menu-item" data-name="Nước Cam Tươi" data-price="40000"><div class="item-icon">🥤</div><div class="item-name">Nước Cam Tươi</div><div class="item-price">40.000đ</div></div>
+                <div class="menu-item" data-name="Bánh Tiramisu" data-price="35000"><div class="item-icon">🍰</div><div class="item-name">Bánh Tiramisu</div><div class="item-price">35.000đ</div></div>
+            </section>
+
+            <!-- CỘT 3: HÓA ĐƠN (ORDER) - CẬP NHẬT LỚN -->
+            <aside class="order-summary">
+                <div class="order-tabs-container">
+                    <ul class="order-tabs">
+                        <!-- Các tab hóa đơn sẽ được JS thêm vào đây, ví dụ: -->
+                        <li class="order-tab active" data-order-id="hd35">Hóa đơn #35</li>
+                        <li class="order-tab" data-order-id="hd36">Mang về #1</li>
+                    </ul>
+                    <button id="add-order-btn" class="add-order-btn" title="Thêm hóa đơn mới"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                
+                <div class="order-details-container">
+                    <!-- Nội dung của từng hóa đơn sẽ hiển thị ở đây -->
+                    <!-- Hóa đơn #35 -->
+                    <div class="order-details active" data-order-id="hd35">
+                        <ul class="order-list">
+                            <!-- Các món trong HĐ #35 -->
+                        </ul>
+                        <div class="order-footer">
+                            <div class="total-section">
+                                <div class="line"><span>Tạm tính</span><span class="subtotal">0đ</span></div>
+                                <div class="line"><span>Giảm giá</span><span class="discount">0đ</span></div>
+                                <div class="line total"><span>THÀNH TIỀN</span><span class="final-total">0đ</span></div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-secondary"><i class="fa-solid fa-print"></i> In hóa đơn</button>
+                                <button class="btn btn-primary"><i class="fa-solid fa-credit-card"></i> Thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hóa đơn #36 (Mang về) -->
+                    <div class="order-details" data-order-id="hd36">
+                         <ul class="order-list">
+                            <!-- Các món trong HĐ #36 -->
+                         </ul>
+                        <div class="order-footer">
+                             <div class="total-section">
+                                <div class="line"><span>Tạm tính</span><span class="subtotal">0đ</span></div>
+                                <div class="line"><span>Giảm giá</span><span class="discount">0đ</span></div>
+                                <div class="line total"><span>THÀNH TIỀN</span><span class="final-total">0đ</span></div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-secondary"><i class="fa-solid fa-print"></i> In hóa đơn</button>
+                                <button class="btn btn-primary"><i class="fa-solid fa-credit-card"></i> Thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+    
+    <script src="/js/pos-script.js"></script>
+</body>
+</html>
